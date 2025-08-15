@@ -11,7 +11,8 @@ class Settings(BaseSettings):
     DATABASE_URL:str
     ALLOWED_ORIGINS: str = ""
     OPENAI_API_KEY:str 
-
+    LLM_MODEL: str
+    
     @field_validator("ALLOWED_ORIGINS")
     def parse_allowed_origins(cls,v:str) -> List[str]:
         return v.split(",") if v else []
