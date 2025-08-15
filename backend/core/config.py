@@ -1,7 +1,10 @@
 from typing import List
 from pydantic_settings import BaseSettings
 from pydantic import field_validator
+from dotenv import load_dotenv
 
+# Load .env file explicitly
+load_dotenv()
 class Settings(BaseSettings):
     API_PREFIX:str = "/api"
     DEBUG: bool = False
