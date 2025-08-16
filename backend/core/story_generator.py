@@ -44,9 +44,9 @@ class StoryGenerator:
         if not response_text or response_text.strip().lower() == "null":
             raise ValueError("LLM returned empty or null response")
 
-        print("======Text=====")
-        print("TEXT:", response_text)
-        print("======Text=====")
+        # print("======Text=====")
+        # print("TEXT:", response_text)
+        # print("======Text=====")
 
         try:
             story_structure = story_parser.parse(response_text)
