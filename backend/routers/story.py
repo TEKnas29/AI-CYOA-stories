@@ -46,9 +46,9 @@ def create_story(
 
     background_tasks.add_task(
         generate_story_task,
-        job_id,
-        request.theme,
-        session_id
+        job_id=job_id,
+        theme=request.theme,
+        session_id=session_id
     )
 
     return job
@@ -89,7 +89,7 @@ def get_complete_story(story_id:int, db: Session = Depends(get_db)):
     return completed_story
 
 
-def build_complete_story_tree(db: Session, story = Story) -> CompleteStoryResponse:
+def build_complete_story_tree(db: Session, story: Story) -> CompleteStoryResponse:
     nodes = db.query(StoryNode).filter(StoryNode.story_id == story.id).all()
 
     node_dict = {}

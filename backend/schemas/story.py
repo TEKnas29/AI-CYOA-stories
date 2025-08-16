@@ -21,7 +21,7 @@ class CompleteStoryNodeResponse(StoryNodeBase):
 
 class StoryBase(BaseModel):
     title: str
-    session_id: Optional[List] = None
+    session_id: Optional[str] = None
     
     class Config:
         from_attributes = True
